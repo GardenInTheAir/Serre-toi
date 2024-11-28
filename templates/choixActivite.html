@@ -1,0 +1,20 @@
+<!-- choixActivite.html -->
+{% extends "base.html" %}
+
+{% block title %}Choix d'activité - Serre-toi{% endblock %}
+
+{% block content %}
+<h1>Choisir une activité</h1>
+<br>
+    {% if message %}
+    <h3>{{ message }}</h3>
+    <br>
+    {% endif %}
+<form method="POST" action="{{ url_for('choisir') }}">
+    {% for activity in activities %}
+    <input type="radio" name="intitule" value="{{ activity[4] }}"> {{ activity[4] }} - {{ activity[1] }}<br>
+    {% endfor %}
+    <input type="submit" value="Choisir">
+</form>
+
+{% endblock %}

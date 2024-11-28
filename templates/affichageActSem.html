@@ -1,0 +1,31 @@
+<!-- affichageActSem.html -->
+{% extends "base.html" %}
+
+{% block title %}Affichage d'activités par semaine - Serre-toi{% endblock %}
+
+{% block content %}
+
+<h1>Réservations pour l'Activité "{{ intitule }}" et la Semaine {{ semaine }}</h1>
+    
+    {% for jour, reservations in grouped_reservations.items() %}
+        <!--<pre>{{ grouped_reservations | tojson }}</pre>-->
+        <h2>{{ jour }}</h2>
+        {% if reservations %}
+            <table border="1">
+                <tr>
+                    <th>Courriel</th>
+                    <th>Heure</th>
+                </tr>
+                {% for reservation in reservations %}
+                    <tr>
+                        <td>{{ reservation.courriel }}</td>
+                        <td>{{ reservation.heure }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>Aucune réservation pour ce jour.</p>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}

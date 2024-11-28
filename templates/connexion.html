@@ -1,0 +1,18 @@
+<!-- connexion.html -->
+{% extends "base.html" %}
+
+{% block title %}Connexion - Serre-toi{% endblock %}
+
+{% block content %}
+    <h1>S'authentifier</h1>
+    <br>
+    {% if message %}
+    <h3>{{ message }}</h3>
+    <br>
+    {% endif %}
+    <form method="POST">
+        Email: <input type="text" name="email"><br>
+        Mot de passe: <input type="password" name="mdp"><br>
+        <input type="submit" value="Connexion">
+    </form>    
+{% endblock %}

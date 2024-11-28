@@ -1,0 +1,47 @@
+<!-- activites.html -->
+{% extends "base.html" %}
+
+{% block title %}Activités déclarées - Serre-toi{% endblock %}
+
+{% block content %}
+
+<h1>ACTIVITÉS DÉCLARÉES</h1>
+<br>
+<h2>Choisissez votre mode de recherche</h2>
+<br><br>
+{% if message %}
+<h3>{{ message }}</h3>
+<br>
+{% endif %}
+<form method="POST">
+    <!-- Recherche par activité et semaine -->
+    <h2>Recherche par Activité et Semaine</h2>
+    <label for="intitule">Choisir une activité :</label>
+    <select name="intitule" id="intitule">
+        {% for choix in choix_list %}
+            <option value="{{ choix[4] }}">{{ choix[4] }}</option>
+        {% endfor %}
+    </select><br>
+    
+    <label for="semaine">Choisir une semaine :</label>
+    <select name="semaine" id="semaine">
+        {% for semaine in semaines %}
+            <option value="{{ semaine }}">Semaine {{ semaine }}</option>
+        {% endfor %}
+    </select><br><br>
+    
+    <button type="submit" name="search_by_activity_week">Rechercher</button>
+</form>
+<br><br>
+<hr>
+
+<!-- Recherche par email d'utilisateur -->
+<form method="POST">
+    <h2>Recherche par Email d'Utilisateur</h2>
+    <label for="courriel">Entrez l'email :</label>
+    <input type="email" name="courriel" id="courriel" required><br><br>
+    
+    <button type="submit" name="search_by_email">Rechercher</button>
+</form>
+<br><br>
+{% endblock %}

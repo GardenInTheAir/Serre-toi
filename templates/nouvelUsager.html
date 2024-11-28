@@ -1,0 +1,29 @@
+<!-- nouvel_usager.html -->
+{% extends "base.html" %}
+
+{% block title %}Blogue et Événements - Serre-toi{% endblock %}
+
+{% block content %}
+    <h1>Devenez membre de Serre-toi</h1>
+    {% if message %}
+    <h3>{{ message }}</h3>
+    {% endif %}
+    <!-- {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %} -->
+    <form method="POST" action="{{ url_for('nouvel_usager') }}">
+        <table>
+            <tr><td>* Email:</td> <td><input type="email" name="email" value="{{ email }}" /></td></tr>
+            <tr><td>Mot de passe:</td> <td><input type="text" name="mdp" value="{{ mdp }}" /></td></tr>
+            <tr><td>* Prénom:</td> <td><input type="text" name="prenom" placeholder="un prénom" /></td></tr>
+            <tr><td>* Nom:</td> <td><input type="text" name="nom" placeholder="un nom" /></td></tr>
+        </table>
+        <input type="submit" value="Soumettre votre inscription" />
+    </form>
+{% endblock %}

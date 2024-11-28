@@ -1,0 +1,31 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Serre-toi{% endblock %}</title>
+    <link href="{{ url_for('static', filename='css/mon_style_E1.css') }}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="entete">
+        <p id="logo"><img src="{{ url_for('static', filename='images/logo_serre_toi_trans.png') }}" alt="Logo de Serre-toi" width="260" height="65" /></p>
+        <h2>Un projet d'agriculture urbaine communautaire à Polytechnique Montréal </h2>
+        <h3>Site de réservations pour Poly-Verti</h3><br />
+        <div id="menu-top">
+            <a href="{{ url_for('home') }}" title="Accueil du site">Accueil</a>
+            <a href="{{ url_for('rechercheActivites') }}" title="Afficher les activités disponibles">Activités</a>
+            <a href="{{ url_for('connexion') }}" title="Effectuer une réservation">Réservation</a>
+            <a href="{{ url_for('nouvel_usager') }}" title="Devenir membre">Devenir membre</a>
+            <a href="{{ url_for('modalites') }}" title="Modalités d'adhésion">Modalités d'adhésion</a>
+            <a href="{{ url_for('blogue') }}" title="Blogue">Blogue</a>
+        </div>
+    </div>
+
+    <!-- Contenu spécifique à chaque page -->
+    {% block content %}{% endblock %}
+
+    <footer>
+        <p>Copyright Serre-toi</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!-- confirmationCompte.html -->
+{% extends "base.html" %}
+
+{% block title %}Confirmation de Création de compte - Serre-toi{% endblock %}
+
+{% block content %}
+
+    <h1>Félicitations, {{ prenom }} {{ nom }} !</h1>
+    
+    <p>Votre inscription a été réussie.</p>
+    <p><strong>Prénom:</strong> {{ prenom }}</p>
+    <p><strong>Nom:</strong> {{ nom }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Mot de passe:</strong> {{ mdp }}</p>
+
+    <p>Veuillez vous rappeler bien de votre mot de passe!</p>
+
+    <p>Merci de vous être inscrit sur notre site.</p>
+
+{% endblock %}

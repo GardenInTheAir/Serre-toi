@@ -1,0 +1,31 @@
+<!-- affichageActUtilisateur.html -->
+{% extends "base.html" %}
+
+{% block title %}Affichage d'activités par utilisateur - Serre-toi{% endblock %}
+
+{% block content %}
+
+<h1>Réservations pour l'utilisateur avec email : {{ courriel }}</h1>
+    
+    {% if grouped_reservations %}
+        <table border="1">
+            <tr>
+                <th>Activité</th>
+                <th>Semaine</th>
+                <th>Jour</th>
+                <th>Heure</th>
+            </tr>
+            {% for reservation in grouped_reservations %}
+                <tr>
+                    <td>{{ reservation.activite }}</td>
+                    <td>{{ reservation.semaine }}</td>
+                    <td>{{ reservation.jour }}</td>
+                    <td>{{ reservation.heure }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Aucune réservation trouvée pour cet utilisateur.</p>
+    {% endif %}
+
+{% endblock %}

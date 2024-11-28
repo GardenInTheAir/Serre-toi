@@ -1,0 +1,16 @@
+<!-- blogue.html -->
+{% extends "base.html" %}
+
+{% block title %}Blogue et Événements - Serre-toi{% endblock %}
+
+{% block content %}
+    <h1>BLOGUE ET ÉVÉNEMENTS</h1>
+    <h2>Suivez les nouveaux développements de Serre-toi!</h2>
+    <table width="90%">
+        <tr>
+            <td><img src="{{ url_for('static', filename='images/mur_vertical.jpg') }}" alt="Mur vertical" style="width:213px;height:320px;"></td>
+            <td><img src="{{ url_for('static', filename='images/hydro_design1.png') }}" alt="Design hydroponique" style="width:261px;height:206px;"></td>
+            <td><img src="{{ url_for('static', filename='images/mur.jpg') }}" alt="Mur vertical 2" style="width:100%;height:auto;"></td>
+        </tr>
+    </table>
+{% endblock %}
